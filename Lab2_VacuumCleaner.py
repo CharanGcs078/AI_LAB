@@ -9,8 +9,18 @@ def vacuum_world():
     location_input = input("Enter Location of Vacuum (A or B): ").upper()
     status_input = input("Enter status of Room " + location_input + " (0 for Clean, 1 for Dirty): ")
     status_input_complement = input("Enter status of the other room (0 for Clean, 1 for Dirty): ")
+
+    initial_state = {'A': '0', 'B': '0'}  # Default initial state
+
+    # Update the initial state based on the user input
+    if location_input == 'A':
+        initial_state['A'] = status_input
+        initial_state['B'] = status_input_complement
+    else:
+        initial_state['A'] = status_input_complement
+        initial_state['B'] = status_input
     
-    print("\nInitial Room Condition: " + str(goal_state))
+    print("\nInitial Room Condition: " + str(initial_state))
     
     # Vacuum in location A
     if location_input == 'A':
@@ -72,3 +82,4 @@ def vacuum_world():
 
 # Run the vacuum world problem
 vacuum_world()
+
