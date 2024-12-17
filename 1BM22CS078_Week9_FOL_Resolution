@@ -55,7 +55,7 @@ KB = [
 ]
 
 # Query: John likes peanuts
-query = "¬Likes(John, Peanuts)"
+query = "Likes(John, Peanuts)"
 
 # Run the resolution algorithm
 if resolution(KB, query):
